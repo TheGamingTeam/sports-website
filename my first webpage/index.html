@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your custom styles here */
+        /* Add your custom styles here */
+        html, body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #ffc107;
+        }
+
+        main {
+            padding: 20px 0;
+        }
+
+        .tabs {
+            text-align: center;
+        }
+
+        .tablinks {
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tablinks:hover {
+            background-color: #ffdb4d;
+        }
+
+        .tablinks.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .sport-tab {
+            display: none;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .sport-tab.active {
+            display: block;
+        }
+
+        .sport-tab h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sport-tab p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .contact {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .contact label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .contact input[type="text"],
+        .contact input[type="email"],
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .contact textarea {
+            height: 150px;
+        }
+
+        .contact button {
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .contact button:hover {
+            background-color: #ffdb4d;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #555;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sports Central</h1>
+			  <li>
+                        <input type="text" id="searchInput" placeholder="Search anything about sports">
+                        <button onclick="searchWikipedia()">Search</button>
+                    </li>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="tabs">
+                <button class="tablinks active" onclick="openSport(event, 'football')">Football</button>
+                <button class="tablinks" onclick="openSport(event, 'basketball')">Basketball</button>
+                <button class="tablinks" onclick="openSport(event, 'cricket')">Cricket</button>
+            </div>
+
+            <div id="football" class="sport-tab active">
+                <h2>Football</h2>
+                <p>Football clubs are the backbone of the sport, serving as the focal points for professional competition and fan loyalty. Clubs vary in size, history, and success, with some enjoying global recognition and others operating at the local or regional level. The world's top football clubs, such as FC Barcelona, Real Madrid, Manchester United, and Bayern Munich, boast extensive fan bases, lucrative sponsorship deals, and storied histories of success in domestic and international competitions.
+
+Professional football players are revered as heroes by fans around the world, with their performances on the pitch scrutinized and celebrated with fervor. From iconic figures like Lionel Messi and Cristiano Ronaldo to rising stars like Kylian Mbappé and Erling Haaland, footballers command immense respect and admiration for their skill, athleticism, and dedication to their craft. Many players have transcended the sport to become global icons, using their platforms to advocate for social causes and effect positive change in their communities.
+
+The rules of football, codified by the International Football Association Board (IFAB), provide the framework for the game's structure and conduct. These rules cover various aspects, including the dimensions of the field, the number of players, fouls, offside, and the role of match officials. Referees and assistant referees enforce these rules during matches, ensuring fair play and sportsmanship on the field.
+
+Off the pitch, football is governed by various organizations, including FIFA (Fédération Internationale de Football Association) at the international level and national football associations at the domestic level. These organizations oversee competitions, regulate player transfers, and promote the development of the sport globally through grassroots initiatives and youth programs. Additionally, leagues such as the English Premier League, La Liga, Serie A, and the Bundesliga operate independently, organizing domestic competitions and generating revenue through broadcasting rights, sponsorships, and merchandise sales.
+
+
+
+
+
+</p>
+           <img src="pexels-mike-1171084.jpg" width="300" height="200">
+ </div>
+
+            <div id="basketball" class="sport-tab">
+                <h2>Basketball</h2>
+                <p>Basketball's allure lies not only in its clubs, players, and rules but also in the cultural impact it has had on societies worldwide. Basketball clubs serve as the heartbeat of the sport, providing a platform for players to showcase their talents and compete at the highest levels. From iconic franchises like the Los Angeles Lakers and the Boston Celtics to grassroots teams in urban neighborhoods and rural communities, basketball clubs serve as incubators for talent and passion.
+
+Professional basketball players are revered for their athleticism, skill, and charisma, captivating audiences with their gravity-defying dunks, pinpoint passes, and clutch performances. From pioneers like Michael Jordan and Magic Johnson to contemporary icons like LeBron James and Stephen Curry, basketball players inspire millions of fans around the world with their talent and determination. Their influence extends beyond the court, shaping popular culture and transcending borders.
+
+The rules of basketball, established by the International Basketball Federation (FIBA), provide the framework for the sport's structure and conduct. These rules cover various aspects, including scoring, fouls, violations, and game management. Referees enforce these rules during matches, ensuring fair play and sportsmanship on the court.
+
+Off the court, basketball is governed by various organizations, including national basketball federations and professional leagues, which oversee competitions, player development programs, and grassroots initiatives. Leagues such as the NBA (National Basketball Association) in the United States and the EuroLeague in Europe serve as showcases for the world's top talent, attracting fans and players from every corner of the globe. Together, these organizations work to promote the growth and popularity of basketball, ensuring its status as one of the world's most beloved sports.
+</p>
+<img src="pexels-santiago-pagnotta-1702624.jpg" width="300" height="200">
+            </div>
+
+            <div id="cricket" class="sport-tab">
+                <h2>Cricket</h2>
+                <p>Cricket's rich tapestry is woven with the threads of clubs, players, and rules, each contributing to the vibrant tapestry of the sport. Cricket clubs serve as the bedrock of the game, nurturing talent and fostering a sense of community among players and fans. From storied institutions like the Marylebone Cricket Club (MCC) at Lord's Cricket Ground to local teams in villages and towns around the world, cricket clubs provide a home for enthusiasts to come together and celebrate their love for the game.
+
+Professional cricketers are revered for their skill, dedication, and sportsmanship, with their performances on the field captivating audiences and inspiring generations of fans. From legendary figures like Sir Donald Bradman and Sachin Tendulkar to modern-day superstars like Virat Kohli and Steve Smith, cricketers occupy a special place in the hearts of millions of fans worldwide. Their exploits on the field transcend boundaries, uniting people of diverse backgrounds in their shared passion for the sport.
+
+The rules of cricket, meticulously crafted and refined over centuries, govern every aspect of the game, from the dimensions of the playing field to the conduct of players and officials. These rules, codified by the International Cricket Council (ICC), ensure fair play and uphold the integrity of the sport. Umpires and match officials enforce these rules during matches, using technology such as ball-tracking and video replays to aid decision-making and maintain the integrity of the game.
+
+Off the field, cricket is overseen by various organizations, including national cricket boards and regional associations, which administer leagues, tournaments, and grassroots development programs. The ICC serves as the global governing body for cricket, coordinating international competitions such as the ICC Cricket World Cup and the ICC T20 World Cup. Together, these organizations work to promote the growth and popularity of cricket around the world, ensuring its enduring legacy for generations to come.</p>
+     <img src="pexels-mam-ashfaq-3452356.jpg" width="300" height="200">
+       </div>
+        </div>
+    </main>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Sports Central. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">Top</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>This is a modal window. You can close it by clicking on the close button or outside the modal.</p>
+        </div>
+    </div>
+
+    <h1>Please rate this website</h1>
+    <div class="poll-container">
+        <h2>What do you think of our service?</h2>
+        <div class="option">
+            <label for="option1">
+                <input type="radio" id="option1" name="vote" value="excellent"> Excellent
+            </label>
+        </div>
+        <div class="option">
+            <label for="option2">
+                <input type="radio" id="option2" name="vote" value="good"> Good
+            </label>
+        </div>
+        <div class="option">
+            <label for="option3">
+                <input type="radio" id="option3" name="vote" value="average"> Average
+            </label>
+        </div>
+        <div class="option">
+            <label for="option4">
+                <input type="radio" id="option4" name="vote" value="poor"> Poor
+            </label>
+        </div>
+        <button onclick="submitVote()">Submit Vote</button>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
